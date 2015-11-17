@@ -45,5 +45,5 @@ bool MainMenu::init()
 void MainMenu::goToGameScene(Ref *pSender) 
 {
 	auto scene = GameScene::createScene();
-	Director::getInstance()->replaceScene(TransitionFade::create(1.0, scene));
+	Director::getInstance()->replaceScene(TransitionFade::create(0.5, scene));
 }

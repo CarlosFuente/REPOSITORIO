@@ -5,16 +5,18 @@
 #include "cocos2d.h"
 USING_NS_CC;
 
+const int _ptag = 1;
+
 
 class Plataforma : public cocos2d::Layer
 {
 
 private:
-
 	cocos2d::Size visibleSize;
 	cocos2d::Vec2 origin;
 
 	cocos2d::Sprite *plataforma;
+	int _tipo;
 
 	//Plataformas que desaparecen
 	bool desaparece; //Si tiene algun condicionante para desaparecer
@@ -25,7 +27,7 @@ private:
 
 
 public:
-	Plataforma(cocos2d::Layer *layer, int X, int Y);
+	Plataforma(cocos2d::Layer *layer, int X, int Y, int tipo);
 
 	void setPosition(int X, int Y);
 

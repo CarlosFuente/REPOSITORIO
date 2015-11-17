@@ -6,18 +6,24 @@
 USING_NS_CC;
 
 const int   SPEED = 10;
-const int JUMP = 0;
+const int JUMP = 40;
+const int _rooneytag = 0;
 
 
 class Rooney : public cocos2d::Layer
 {
 
 private:
-
-	bool _isMoving;
-	Vec2 _podVector;
-	int _jump;
+	//Movimiento
 	int _speed;
+
+	//Salto
+	cocos2d::Vec2 _jump;
+	Vec2 _podVectorJ;
+	int __jump;
+	bool _canJump;
+	bool _isJumping;
+	int _contJump;
 	
 
 	cocos2d::Size visibleSize;
@@ -30,13 +36,23 @@ private:
 public:
 	Rooney(cocos2d::Layer *layer);
 
+	bool left;
+	bool right;
+
 
 	//My functions
 	
 	void moveRooney();
-	void updateMove(bool Moving, Vec2 Vector);
 
 	void setPosition(int X, int Y);
+
+	//Salto
+	bool Rooney::getCanJump();
+	void Rooney::setCanJump(bool p);
+	void Rooney::Jump();
+	void Rooney::setJumping(bool p);
+
+	void Rooney::Move(bool derecha);
 
 	//Funciones Movimiento
 	//void onKeyPressed(EventKeyboard::KeyCode keyCode, Event *event);
